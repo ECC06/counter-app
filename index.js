@@ -1,4 +1,4 @@
-const spansList = document.querySelectorAll(".num");
+const span = document.querySelector(".numbers-cont span");
 const incrementBtn = document.getElementById("increment-btn");
 const decrementBtn = document.getElementById("decrement-btn");
 const resetBtn = document.getElementById("reset-btn");
@@ -8,50 +8,42 @@ let plusBtnClicked = false;
 let minusBtnClicked = false;
 let resetBtnClicked = false;
 
-populateSpans();
+displayOutput();
 
 incrementBtn.addEventListener("click", (e) => {
     if (total < 1000) {
         plusBtnClicked = true;
-        minusBtnClicked = false;
-
         total++;
 
-        populateSpans();
+        displayOutput();
     }
 });
 
 decrementBtn.addEventListener("click", (e) => {
     if (total > 0) {
         minusBtnClicked = true;
-        plusBtnClicked = false;
-
         total--;
 
-        populateSpans();
+        displayOutput();
     }
 });
 
 resetBtn.addEventListener("click", (e) => {
-    resetBtnClicked = "true";
+    resetBtnClicked = true;
 
     total = 0;
-    populateSpans();
+    displayOutput();
 });
 
-function populateSpans() {
+function displayOutput() {
     const finalOutput = total.toString().padStart("4", 0);
-    const finalOutputArr = finalOutput.split(""); //e.g ["0", "0", "0", "1"]
+    span.textContent = finalOutput;
 
-    let index = 0;
+    if (plusBtnClicked) span.style.color = "var(--lime-green)";
+    if (minusBtnClicked) span.style.color = "red";
+    if (resetBtnClicked) span.style.color = "white";
 
-    spansList.forEach((span) => {
-        span.textContent = finalOutputArr[index];
-
-        if (plusBtnClicked) span.style.color = "var(--lime-green)";
-        if (minusBtnClicked) span.style.color = "red";
-        if (resetBtnClicked) span.style.color = "white";
-
-        index++;
-    });
+    minusBtnClicked = false;
+    plusBtnClicked = false;
+    resetBtnClicked = false;
 }
