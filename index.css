@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+/* *GLOBAL STYLES */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* colors */
+    --red: #ff1c1c;
+    --green: #00b400;
+    --grey: hsl(0, 0%, 20%, 1);
+
+    /* font-sizes (naming in pixels, values in rem) */
+    --font-size-4: 0.25rem;
+    --font-size-8: 0.5rem;
+    --font-size-12: 0.75rem;
+    --font-size-16: 1rem;
+    --font-size-20: 1.25rem;
+    --font-size-24: 1.5rem;
+    --font-size-28: 1.75rem;
+    --font-size-32: 2rem;
+    --font-size-36: 2.25rem;
+    --font-size-40: 2.5rem;
+    --font-size-44: 2.75rem;
+    --font-size-48: 3rem;
+    --font-size-52: 3.25rem;
+    --font-size-56: 3.5rem;
+    --font-size-60: 3.75rem;
+    --font-size-64: 4rem;
+    --font-size-68: 4.25rem;
+    --font-size-72: 4.5rem;
+    --font-size-76: 4.75rem;
+    --font-size-80: 5rem;
+    --font-size-84: 5.25rem;
+    --font-size-88: 5.5rem;
+    --font-size-92: 5.75rem;
+    --font-size-96: 6rem;
+    --font-size-100: 6.25rem;
+
+    /* font weight */
+    --regular: 400;
+    --medium: 500;
+    --semi-bold: 600;
+    --bold: 700;
+}
+
+@font-face {
+    font-family: DSdigitalBold;
+    src: url(./fonts/DS-DIGIB.TTF);
+    font-weight: normal;
+    font-style: normal;
+    font-display: normal;
+}
+
+html,
+body {
+    height: 100vh;
+}
+
+body {
+    background-color: var(--grey);
+    display: grid;
+    place-items: center;
+}
+
+.cont {
+    display: grid;
+    row-gap: 170px;
+}
+
+.numbers-cont {
+    display: flex;
+    font-family: DSdigitalBold, sans-serif;
+    padding: 8px 32px;
+    color: white;
+    background-color: black;
+    font-size: 250px;
+    border-radius: 18px;
+    letter-spacing: 0.25cap;
+}
+
+.numbers-cont span {
+    width: fit-content;
+    display: block;
+    transform: translateX(20px);
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+.control-btn {
+    display: grid;
+    place-items: center;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: none;
+    transition: all 300ms ease-in-out;
+    cursor: pointer;
+}
+
+.control-btn:hover {
+    scale: 1.2;
+}
+
+.control-btn.plus {
+    background-color: var(--red);
+}
+
+.control-btn.minus {
+    background-color: var(--green);
+}
+
+#reset-btn {
+    font-family: "Inter", sans-serif;
+    letter-spacing: 1.25px;
+    font-weight: 500;
+    background-color: transparent;
+    text-align: center;
+    height: fit-content;
+    border-radius: 5px;
+    border: 2px solid white;
+    padding: 8px 32px;
+    color: white;
+    font-size: 32px;
+    transition: all 300ms ease-in-out;
+    cursor: pointer;
+}
+
+#reset-btn:hover {
+    background-color: white;
+    color: black;
+}
+
+/* *RE-USABLE STYLES */
+
+/* *SPECIFIC STYLES */
+
+/* e.g... */
+
+/* *---NAV SECTION ---*/
+
+/* *---ABOUT SECTION ---*/
+
+/* *---FOOTER ---*/
