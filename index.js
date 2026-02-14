@@ -6,6 +6,7 @@ const resetBtn = document.getElementById("reset-btn");
 let total = 0;
 let plusBtnClicked = false;
 let minusBtnClicked = false;
+let resetBtnClicked = false;
 
 populateSpans();
 
@@ -31,6 +32,13 @@ decrementBtn.addEventListener("click", (e) => {
     }
 });
 
+resetBtn.addEventListener("click", (e) => {
+    resetBtnClicked = "true";
+
+    total = 0;
+    populateSpans();
+});
+
 function populateSpans() {
     const finalOutput = total.toString().padStart("4", 0);
     const finalOutputArr = finalOutput.split(""); //e.g ["0", "0", "0", "1"]
@@ -40,8 +48,9 @@ function populateSpans() {
     spansList.forEach((span) => {
         span.textContent = finalOutputArr[index];
 
-        if (plusBtnClicked) span.style.color = "green";
+        if (plusBtnClicked) span.style.color = "var(--lime-green)";
         if (minusBtnClicked) span.style.color = "red";
+        if (resetBtnClicked) span.style.color = "white";
 
         index++;
     });

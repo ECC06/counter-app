@@ -11,7 +11,8 @@
 :root {
     /* colors */
     --red: #ff1c1c;
-    --green: #00b400;
+    --green: green;
+    --lime-green: #00ff0c;
     --grey: hsl(0, 0%, 20%, 1);
 
     /* font-sizes (naming in pixels, values in rem) */
@@ -112,11 +113,11 @@ body {
 }
 
 .control-btn.plus {
-    background-color: var(--red);
+    background-color: var(--green);
 }
 
 .control-btn.minus {
-    background-color: var(--green);
+    background-color: var(--red);
 }
 
 #reset-btn {
