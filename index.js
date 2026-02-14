@@ -1,7 +1,7 @@
 const span = document.querySelector(".numbers-cont span");
 const incrementBtn = document.getElementById("increment-btn");
 const decrementBtn = document.getElementById("decrement-btn");
-const resetBtn = document.getElementById("reset-btn");
+const resetBtn = document.querySelector(".reset-btn");
 
 let total = 0;
 let plusBtnClicked = false;

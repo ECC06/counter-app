@@ -71,15 +71,15 @@ body {
 .cont {
     display: grid;
     row-gap: 170px;
+    width: min(100%, 700px);
 }
 
 .numbers-cont {
     display: flex;
+    justify-content: center;
     font-family: DSdigitalBold, sans-serif;
-    padding: 8px 32px;
     color: white;
     background-color: black;
-    font-size: 250px;
     border-radius: 18px;
     letter-spacing: 0.25cap;
 }
@@ -87,14 +87,20 @@ body {
 .numbers-cont span {
     width: fit-content;
     display: block;
-    transform: translateX(20px);
+    /* transform: translateX(25px); */
+    font-size: 275px;
+    letter-spacing: 15px;
 }
 
-.controls {
+.desktop-controls {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 100px;
+}
+
+.mobile-controls {
+    display: none;
 }
 
 .control-btn {
@@ -120,7 +126,7 @@ body {
     background-color: var(--red);
 }
 
-#reset-btn {
+.reset-btn {
     font-family: "Inter", sans-serif;
     letter-spacing: 1.25px;
     font-weight: 500;
@@ -136,19 +142,77 @@ body {
     cursor: pointer;
 }
 
-#reset-btn:hover {
+.reset-btn:hover {
     background-color: white;
     color: black;
 }
 
-/* *RE-USABLE STYLES */
+@media (max-width: 768px) {
+    .cont {
+        width: 80%;
+    }
 
-/* *SPECIFIC STYLES */
+    .numbers-cont span {
+        font-size: 200px;
+    }
 
-/* e.g... */
+    .numbers-cont span {
+        font-size: clamp(6.25rem, 22.321vw + 1.786rem, 12.5rem);
+    }
 
-/* *---NAV SECTION ---*/
+    .desktop-controls {
+        display: none;
+    }
 
-/* *---ABOUT SECTION ---*/
+    .mobile-controls {
+        display: flex;
+        flex-direction: column;
+        row-gap: 52px;
+    }
 
-/* *---FOOTER ---*/
+    .mobile-controls > .buttons-cont {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .mobile-controls > .reset-btn {
+        padding: 16px 8px;
+        font-size: 40px;
+    }
+
+    .control-btn {
+        width: 115px;
+        height: 115px;
+    }
+
+    .control-btn > svg {
+        width: 50px;
+        height: 50px;
+    }
+
+    .reset-btn {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 640px) {
+    .cont {
+        width: 90%;
+    }
+}
+
+@media (max-width: 450px) {
+    .numbers-cont span {
+        transform: translateX(5px);
+    }
+
+    .mobile-controls {
+        width: 80%;
+        justify-self: center;
+    }
+
+    .control-btn {
+        width: 90px;
+        height: 90px;
+    }
+}
