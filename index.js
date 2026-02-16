@@ -1,8 +1,7 @@
 const span = document.querySelector(".numbers-cont span");
-const cont = document.querySelector("#cont");
-let incrementBtnList = document.querySelectorAll("#increment-btn");
-let decrementBtnList = document.querySelectorAll("#decrement-btn");
-let resetBtnList = document.querySelectorAll("#reset-btn");
+const incrementBtnList = document.querySelectorAll("#increment-btn");
+const decrementBtnList = document.querySelectorAll("#decrement-btn");
+const resetBtnList = document.querySelectorAll("#reset-btn");
 
 let total = 0;
 let plusBtnClicked = false;
@@ -15,44 +14,44 @@ addListenersToAll(decrementBtnList, decrementFunc);
 addListenersToAll(resetBtnList, resetFunc);
 
 function incrementFunc() {
-    if (total < 1000) {
-        plusBtnClicked = true;
-        total++;
+	if (total < 1000) {
+		plusBtnClicked = true;
+		total++;
 
-        displayOutput();
-    }
+		displayOutput();
+	}
 }
 
 function decrementFunc() {
-    if (total > 0) {
-        minusBtnClicked = true;
-        total--;
+	if (total > 0) {
+		minusBtnClicked = true;
+		total--;
 
-        displayOutput();
-    }
+		displayOutput();
+	}
 }
 
 function resetFunc() {
-    resetBtnClicked = true;
-    total = 0;
-    displayOutput();
+	resetBtnClicked = true;
+	total = 0;
+	displayOutput();
 }
 
 function addListenersToAll(list, func) {
-    list.forEach((btn) => {
-        btn.addEventListener("click", func);
-    });
+	list.forEach((btn) => {
+		btn.addEventListener("click", func);
+	});
 }
 
 function displayOutput() {
-    const finalOutput = total.toString().padStart("4", 0);
-    span.textContent = finalOutput;
+	const finalOutput = total.toString().padStart("4", 0);
+	span.textContent = finalOutput;
 
-    if (plusBtnClicked) span.style.color = "var(--lime-green)";
-    if (minusBtnClicked) span.style.color = "red";
-    if (resetBtnClicked) span.style.color = "white";
+	if (plusBtnClicked) span.style.color = "var(--lime-green)";
+	if (minusBtnClicked) span.style.color = "red";
+	if (resetBtnClicked) span.style.color = "white";
 
-    minusBtnClicked = false;
-    plusBtnClicked = false;
-    resetBtnClicked = false;
+	minusBtnClicked = false;
+	plusBtnClicked = false;
+	resetBtnClicked = false;
 }

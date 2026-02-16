@@ -78,6 +78,7 @@ body {
 .numbers-cont {
     display: flex;
     justify-content: center;
+    align-items: center;
     font-family: DSdigitalBold, sans-serif;
     color: white;
     background-color: black;
@@ -198,6 +199,10 @@ body {
 @media (max-width: 640px) {
     #cont {
         width: 90%;
+    }
+
+    #mobile-controls > #reset-btn {
+        font-size: 28px;
     }
 }
 
