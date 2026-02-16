@@ -1,7 +1,8 @@
 const span = document.querySelector(".numbers-cont span");
-const incrementBtn = document.getElementById("increment-btn");
-const decrementBtn = document.getElementById("decrement-btn");
-const resetBtn = document.querySelector(".reset-btn");
+const cont = document.querySelector("#cont");
+let incrementBtnList = document.querySelectorAll("#increment-btn");
+let decrementBtnList = document.querySelectorAll("#decrement-btn");
+let resetBtnList = document.querySelectorAll("#reset-btn");
 
 let total = 0;
 let plusBtnClicked = false;
@@ -9,31 +10,39 @@ let minusBtnClicked = false;
 let resetBtnClicked = false;
 
 displayOutput();
+addListenersToAll(incrementBtnList, incrementFunc);
+addListenersToAll(decrementBtnList, decrementFunc);
+addListenersToAll(resetBtnList, resetFunc);
 
-incrementBtn.addEventListener("click", (e) => {
+function incrementFunc() {
     if (total < 1000) {
         plusBtnClicked = true;
         total++;
 
         displayOutput();
     }
-});
+}
 
-decrementBtn.addEventListener("click", (e) => {
+function decrementFunc() {
     if (total > 0) {
         minusBtnClicked = true;
         total--;
 
         displayOutput();
     }
-});
+}
 
-resetBtn.addEventListener("click", (e) => {
+function resetFunc() {
     resetBtnClicked = true;
-
     total = 0;
     displayOutput();
-});
+}
+
+function addListenersToAll(list, func) {
+    list.forEach((btn) => {
+        btn.addEventListener("click", func);
+    });
+}
 
 function displayOutput() {
     const finalOutput = total.toString().padStart("4", 0);

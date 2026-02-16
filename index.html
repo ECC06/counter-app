@@ -7,16 +7,40 @@
     <title>Document</title>
     <link rel="stylesheet" href="index.css">
     <script src="index.js" defer></script>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 
 <body>
-    <article class="cont">
+    <article id="cont">
         <div class="numbers-cont">
             <span></span>
         </div>
 
+        <!-- shown by default, then hidden when vw <= 768px -->
+        <div id="desktop-controls">
+            <button class="control-btn plus" id="increment-btn">
+                <!-- plus icon -->
+                <svg width="78" height="78" viewBox="0 0 78 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M77.5194 44.2968H44.2968V77.5194H33.2226V44.2968H0V33.2226H33.2226V0H44.2968V33.2226H77.5194V44.2968Z"
+                        fill="white" />
+                </svg>
+            </button>
+
+            <button id="reset-btn">RESET</button>
+
+            <button class="control-btn minus" id="decrement-btn">
+
+                <!-- minus icon -->
+                <svg width="92" height="13" viewBox="0 0 92 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M92 13H0V0H92V13Z" fill="white" />
+                </svg>
+
+            </button>
+        </div>
+
         <!-- hidden by default, then shown when vw <= 768px -->
-        <div class="mobile-controls">
+        <div id="mobile-controls">
             <div class="buttons-cont">
                 <button class="control-btn plus" id="increment-btn">
                     <!-- plus icon -->
@@ -37,32 +61,8 @@
                 </button>
             </div>
 
-            <button class="reset-btn">RESET</button>
+            <button id="reset-btn">RESET</button>
 
-
-        </div>
-
-        <!-- shown by default, then hidden when vw <= 768px -->
-        <div class="desktop-controls">
-            <button class="control-btn plus" id="increment-btn">
-                <!-- plus icon -->
-                <svg width="78" height="78" viewBox="0 0 78 78" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M77.5194 44.2968H44.2968V77.5194H33.2226V44.2968H0V33.2226H33.2226V0H44.2968V33.2226H77.5194V44.2968Z"
-                        fill="white" />
-                </svg>
-            </button>
-
-            <button class="reset-btn">RESET</button>
-
-            <button class="control-btn minus" id="decrement-btn">
-
-                <!-- minus icon -->
-                <svg width="92" height="13" viewBox="0 0 92 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M92 13H0V0H92V13Z" fill="white" />
-                </svg>
-
-            </button>
         </div>
 
 

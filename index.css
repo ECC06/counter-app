@@ -68,10 +68,11 @@ body {
     place-items: center;
 }
 
-.cont {
+#cont {
     display: grid;
     row-gap: 170px;
-    width: min(100%, 700px);
+    width: min(90%, 900px);
+    min-height: 600px;
 }
 
 .numbers-cont {
@@ -87,19 +88,18 @@ body {
 .numbers-cont span {
     width: fit-content;
     display: block;
-    /* transform: translateX(25px); */
     font-size: 275px;
     letter-spacing: 15px;
 }
 
-.desktop-controls {
+#desktop-controls {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 100px;
 }
 
-.mobile-controls {
+#mobile-controls {
     display: none;
 }
 
@@ -126,7 +126,7 @@ body {
     background-color: var(--red);
 }
 
-.reset-btn {
+#reset-btn {
     font-family: "Inter", sans-serif;
     letter-spacing: 1.25px;
     font-weight: 500;
@@ -142,13 +142,17 @@ body {
     cursor: pointer;
 }
 
-.reset-btn:hover {
+#reset-btn:hover {
     background-color: white;
     color: black;
 }
 
 @media (max-width: 768px) {
-    .cont {
+    #desktop-controls {
+        display: none;
+    }
+
+    #cont {
         width: 80%;
     }
 
@@ -160,22 +164,18 @@ body {
         font-size: clamp(6.25rem, 22.321vw + 1.786rem, 12.5rem);
     }
 
-    .desktop-controls {
-        display: none;
-    }
-
-    .mobile-controls {
+    #mobile-controls {
         display: flex;
         flex-direction: column;
         row-gap: 52px;
     }
 
-    .mobile-controls > .buttons-cont {
+    #mobile-controls > .buttons-cont {
         display: flex;
         justify-content: space-between;
     }
 
-    .mobile-controls > .reset-btn {
+    #mobile-controls > #reset-btn {
         padding: 16px 8px;
         font-size: 40px;
     }
@@ -190,13 +190,13 @@ body {
         height: 50px;
     }
 
-    .reset-btn {
+    #reset-btn {
         font-size: 24px;
     }
 }
 
 @media (max-width: 640px) {
-    .cont {
+    #cont {
         width: 90%;
     }
 }
@@ -206,7 +206,7 @@ body {
         transform: translateX(5px);
     }
 
-    .mobile-controls {
+    #mobile-controls {
         width: 80%;
         justify-self: center;
     }
